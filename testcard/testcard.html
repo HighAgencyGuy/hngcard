@@ -1,0 +1,256 @@
+<!doctype html>
+<html lang="en">
+<head data-testid="test-head">
+  <meta charset="utf-8" data-testid="test-meta-charset">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" data-testid="test-meta-viewport">
+  <title data-testid="test-title">Ferguson's Profile Card</title>
+  <style data-testid="test-style">
+    :root {
+      --bg: #0b1220;
+      --panel: #121a2b;
+      --text: #eaf0ff;
+      --muted: #a9b3c9;
+      --accent: #d6b914;
+      --ring: #9ec2ff;
+      --shadow: 0 10px 24px rgba(0,0,0,.3);
+      --radius: 16px;
+      --gap: 1rem;
+      --maxw: 960px;
+    }
+
+
+    html, body {
+      height: 100%;
+      background: whitesmoke;
+      color: var(--text);
+      font: 16px/1.6 system-ui, -apple-system, Segoe UI, Roboto, "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif;
+      margin: 0;
+    }
+
+    a[data-testid] {
+      color: var(--accent);
+      text-decoration: none;
+    }
+    a[data-testid]:hover { text-decoration: underline; }
+
+    :where(a, button, input, label, textarea, select)[data-testid]:focus-visible {
+      outline: 3px solid var(--ring);
+      outline-offset: 3px;
+      border-radius: 6px;}
+
+    .page-wrap[data-testid] {
+      min-height: 100%;
+      display: grid;
+      place-items: center;
+      padding: 2rem 1rem;
+    }
+
+    article[data-testid="test-profile-card"] {
+      width: 100%;
+      max-width: var(--maxw);
+      background: linear-gradient(180deg, rgba(255,255,255,.03), rgba(255,255,255,.01));
+      border: 1px solid rgba(255,255,255,.08);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      overflow: hidden;
+    }
+
+    .bar[data-testid]{
+      height: 6px;
+      background: linear-gradient(90deg, #6aa2ff, #8b7bff, #e07cff);
+    }
+
+    .card-grid[data-testid]{
+      display: grid;
+      gap: calc(var(--gap) * 1.25);
+      padding: calc(var(--gap) * 1.25);
+    }
+
+    @media (min-width: 760px) {
+      .card-grid[data-testid]{
+        grid-template-columns: 260px 1fr;
+        align-items: start;
+      }
+    }
+
+    .left[data-testid]{
+      display: grid;
+      gap: var(--gap);
+    }
+
+    figure[data-testid]{
+      margin: 0;
+      background: var(--panel);
+      border: 1px solid rgba(255,255,255,.08);
+      border-radius: var(--radius);
+      overflow: hidden;
+    }
+    .avatar-box[data-testid]{
+      aspect-ratio: 1 / 1;
+      display: grid;
+      place-items: center;
+      background:
+        radial-gradient(120px 80px at 30% 20%, rgba(106,162,255,.15), transparent 60%),
+        radial-gradient(140px 100px at 70% 80%, rgba(224,124,255,.14), transparent 70%),
+        #0d1526;
+    }
+    img[data-testid="test-user-avatar"]{
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    figcaption[data-testid]{
+      padding: .75rem .85rem;
+      color: var(--muted);
+      font-size: .9rem;
+      border-top: 1px solid rgba(255,255,255,.06);
+    }
+
+    header[data-testid]{
+      display: grid;
+      gap: .25rem;
+      margin: 15px;
+    }
+    h2[data-testid]{
+      margin: 0;
+      font-size: clamp(1.25rem, 2.5vw, 1.75rem);
+      letter-spacing: .2px;
+      color: #121a2b;
+    }
+    p[data-testid]{
+      margin: .25rem 0 0 0;
+      color: #121a2b;
+    }
+
+    .meta[data-testid]{
+      display: flex;
+      gap: .75rem;
+      flex-wrap: wrap;
+      color: #0b1220;
+      font-size: .9rem;
+    }
+    .pill[data-testid]{
+      background: rgba(233, 181, 8, 1);
+      padding: .35rem .6rem;
+      border-radius: 999px;
+      border: 1px solid rgba(255,255,255,.1);
+    }
+
+    nav[data-testid],
+    section[data-testid]{
+      background: var(--panel);
+      border: 1px solid rgba(255,255,255,.08);
+      border-radius: var(--radius);
+      padding: .9rem;
+    }
+
+    ul[data-testid]{
+      margin: .25rem 0 0 0;
+      padding-left: 1.2rem;
+      display: grid;
+      gap: .35rem;
+      word-break: break-word;
+    }
+
+    .blocks[data-testid]{
+      display: grid;
+      gap: var(--gap);
+    }
+
+  </style>
+</head>
+<body data-testid="test-body">
+  <div class="page-wrap" data-testid="test-page-wrap">
+    <article aria-labelledby="card-title" data-testid="test-profile-card">
+      <div class="bar" data-testid="test-card-bar" aria-hidden="true"></div>
+
+      <div class="card-grid" data-testid="test-card-grid">
+        <div class="left" data-testid="test-left-column">
+          <figure data-testid="test-figure">
+            <div class="avatar-box" data-testid="test-avatar-box">
+              <img
+                src=https://i.pinimg.com/736x/ba/aa/88/baaa888f6c05d8658cb1bcbb8a1e7ea2.jpg
+                alt="Avatar of Ferguson"
+                data-testid="test-user-avatar"
+              >
+            </div>
+            <figcaption data-testid="test-figcaption">
+              Ferguson Aya
+            </figcaption>
+          </figure>
+
+        </div>
+
+        <div class="right" data-testid="test-right-column">
+          <header data-testid="test-header">
+            <h2 id="card-title" data-testid="test-user-name">Ferguson Aya</h2>
+            <p data-testid="test-user-bio">
+              I am a frontend developer who loves to code and build things. I recently started my journey in the world of web development and I am loving it. I am a quick learner and I am always looking to improve my skills. This is my profile card.
+            </p>
+            <div class="meta" data-testid="test-meta">
+              <span class="pill" data-testid="test-user-time-label">Current time (ms):</span>
+              <span class="pill" id="time-ms" data-testid="test-user-time">0</span>
+            </div>
+          </header>
+
+          <div class="blocks" data-testid="test-blocks">
+            <nav aria-label="Social links" data-testid="test-user-social-links">
+              <strong data-testid="test-social-heading">Social</strong>
+              <ul data-testid="test-social-list">
+                <li data-testid="test-social-item-1">
+                  <a href="https://twitter.com/thehaegency" target="_blank" rel="noopener noreferrer"
+                     aria-label="Open Twitter in a new tab"
+                     data-testid="test-user-social-twitter">Twitter</a>
+                </li>
+                <li data-testid="test-social-item-2">
+                  <a href="https://github.com/highagencyguy" target="_blank" rel="noopener noreferrer"
+                     aria-label="Open GitHub in a new tab"
+                     data-testid="test-user-social-github">GitHub</a>
+                </li>
+                <li data-testid="test-social-item-3">
+                  <a href="https://www.linkedin.com/thehaegency" target="_blank" rel="noopener noreferrer"
+                     aria-label="Open LinkedIn in a new tab"
+                     data-testid="test-user-social-linkedin">LinkedIn</a>
+                </li>
+              </ul>
+            </nav>
+
+            <section aria-labelledby="hobbies-title" data-testid="test-hobbies-section">
+              <strong id="hobbies-title" data-testid="test-hobbies-heading">Hobbies</strong>
+              <ul data-testid="test-user-hobbies">
+                <li data-testid="test-hobby-1">Making music</li>
+                <li data-testid="test-hobby-2">Open-source contributions</li>
+                <li data-testid="test-hobby-3">Reading fiction</li>
+              </ul>
+            </section>
+
+            <section aria-labelledby="dislikes-title" data-testid="test-dislikes-section">
+              <strong id="dislikes-title" data-testid="test-dislikes-heading">Dislikes</strong>
+              <ul data-testid="test-user-dislikes">
+                <li data-testid="test-dislike-1">Bugs</li>
+                <li data-testid="test-dislike-2">A bug that develops while you're trying to fix a bug</li>
+                <li data-testid="test-dislike-3">Non profitary conversations</li>
+              </ul>
+            </section>
+          </div>
+        </div>
+      </div>
+    </article>
+  </div>
+
+  <script data-testid="test-script">
+    (function () {
+      const timeEl = document.getElementById('time-ms');
+
+      const tick = () => { timeEl.textContent = String(Date.now()); };
+      tick();
+      const timer = setInterval(tick, 1000);
+      window.addEventListener('beforeunload', () => clearInterval(timer));
+
+
+    }());
+  </script>
+</body>
+</html>
