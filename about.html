@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="en">
+<head data-testid="test-head">
+  <meta charset="utf-8" data-testid="test-meta-charset">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" data-testid="test-meta-viewport">
+  <title data-testid="test-title">About Me</title>
+  <link rel="stylesheet" href="css/about.css" data-testid="test-style">
+
+</head>
+<body>
+  <div class="site-nav" data-testid="test-site-nav">
+    <div class="site-nav-inner">
+      <div class="brand">Ferguson's App</div>
+      <div class="links">
+        <a href="index.html" data-testid="test-link-home">Home</a>
+        <a href="contact.html" data-testid="test-link-contact">Contact</a>
+        <a href="about.html" aria-current="page" data-testid="test-link-about">About</a>
+      </div>
+    </div>
+  </div>
+
+  <main class="main stack" data-testid="test-about-page">
+    <article class="panel" aria-labelledby="about-title">
+      <header>
+        <h1 id="about-title">About Me</h1>
+      </header>
+
+      <section aria-labelledby="bio-h" data-testid="test-about-bio">
+        <h2 id="bio-h">Bio</h2>
+        <p>
+          I’m exploring frontend development with a focus on clean HTML, simple CSS, and practical JavaScript.
+          I like building small, working pages and improving them step by step.
+        </p>
+      </section>
+
+      <section aria-labelledby="goals-h" data-testid="test-about-goals">
+        <h2 id="goals-h">Goals in this program</h2>
+        <ul>
+          <li>Use semantic HTML confidently</li>
+          <li>Ship responsive layouts that don’t break</li>
+          <li>Write clear, accessible forms with validation</li>
+          <li>Keep code small and easy to read</li>
+        </ul>
+      </section>
+
+      <section aria-labelledby="conf-h" data-testid="test-about-confidence">
+        <h2 id="conf-h">Areas of low confidence</h2>
+        <p>
+          Handling tricky layout edge cases, writing robust keyboard interactions, and planning larger apps.
+        </p>
+      </section>
+
+      <section aria-labelledby="future-h" data-testid="test-about-future-note">
+        <h2 id="future-h">Note to future self</h2>
+        <p>
+          Keep things simple. Build a bit every day. Read official docs. Test with the keyboard and screen readers.
+        </p>
+      </section>
+
+      <section aria-labelledby="extra-h" data-testid="test-about-extra">
+        <h2 id="extra-h">Extra thoughts</h2>
+        <p>
+          I want to learn a little testing next so I can lock behavior before styling.
+        </p>
+      </section>
+    </article>
+  </main>
+</body>
+</html>

@@ -1,0 +1,42 @@
+:root{
+    --bg:#0b1220; 
+    --panel:#121a2b; 
+    --text:#eaf0ff; 
+    --muted:#a9b3c9; 
+    --accent:#d6b914;
+    --ring:#9ec2ff; --shadow:0 10px 24px rgba(0,0,0,.3); --radius:16px; --gap:1rem; --maxw:960px;
+  }
+  html,body{
+    height:100%;
+    margin:0;
+    background:whitesmoke;
+    color:var(--text);
+    font:16px/1.6 system-ui,-apple-system,Segoe UI,Roboto,"Helvetica Neue",Arial,"Noto Sans","Liberation Sans",sans-serif;}
+  :where(a,button,input,label,textarea,select):focus-visible{outline:3px solid var(--ring);outline-offset:3px;border-radius:6px;}
+  a{text-decoration:none} a:hover{text-decoration:underline}
+
+  .site-nav{background:linear-gradient(180deg,rgba(0,0,0,.03),rgba(0,0,0,.01));border-bottom:1px solid rgba(0,0,0,.08)}
+  .site-nav-inner{max-width:var(--maxw);margin:0 auto;padding:.6rem 1rem;display:flex;align-items:center;justify-content:space-between;gap:.75rem}
+  .brand{color:#121a2b;font-weight:700;letter-spacing:.2px}
+  .links{display:flex;gap:.6rem}
+  .links a{color:#121a2b;padding:.25rem .5rem;border-radius:8px}
+  .links a[aria-current="page"]{background:rgba(0,0,0,.06)}
+
+  .main{max-width:var(--maxw);margin:0 auto;padding:1.25rem}
+  .panel{background:var(--panel);border:1px solid rgba(255,255,255,.08);border-radius:var(--radius);box-shadow:var(--shadow);padding:1rem}
+  h1{margin:.2rem 0 .6rem 0;color:#eaf0ff;font-size:clamp(1.25rem,2.5vw,1.75rem)}
+  .muted{color:var(--muted);margin:0 0 1rem}
+
+  form{display:grid;gap:1rem}
+  .row{display:grid;gap:.4rem}
+  label{color:var(--muted);font-size:.95rem}
+  input[type="text"], input[type="email"], textarea{
+    width:100%;border-radius:10px;border:1px solid rgba(255,255,255,.12);
+    background:#0f1930;color:var(--text);padding:.65rem .8rem
+  }
+  textarea{min-height:140px;resize:vertical}
+  button[type="submit"]{width:100%;border-radius:10px;border:1px solid rgba(255,255,255,.12);
+    background:linear-gradient(180deg,#243a66,#1a2a4a);color:var(--text);padding:.75rem .9rem;cursor:pointer}
+  button[type="submit"]:hover{filter:brightness(1.05)}
+  .error{color:#ff9da3;font-size:.9rem}
+  .success{background:rgba(100,200,140,.12);border:1px solid rgba(120,220,160,.35);color:#c7ffdb;padding:.75rem .9rem;border-radius:10px}

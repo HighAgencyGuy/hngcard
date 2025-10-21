@@ -1,0 +1,174 @@
+:root {
+    --bg: #0b1220;
+    --panel: #121a2b;
+    --text: #eaf0ff;
+    --muted: #a9b3c9;
+    --accent: #d6b914;
+    --ring: #9ec2ff;
+    --shadow: 0 10px 24px rgba(0,0,0,.3);
+    --radius: 16px;
+    --gap: 1rem;
+    --maxw: 960px;
+  }
+
+
+  html, body {
+    height: 100%;
+    background: whitesmoke;
+    color: var(--text);
+    font: 16px/1.6 system-ui, -apple-system, Segoe UI, Roboto, "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif;
+    margin: 0;
+  }
+  .site-nav {
+    background: linear-gradient(180deg, rgba(0,0,0,.03), rgba(0,0,0,.01));
+    border-bottom: 1px solid rgba(0,0,0,.08);
+  }
+  .site-nav-inner {
+    max-width: var(--maxw);
+    margin: 0 auto;
+    padding: .6rem 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: .75rem;
+  }
+  .brand { color: #121a2b; font-weight: 700; letter-spacing: .2px; }
+  .links { display: flex; gap: .6rem; }
+  .links a {
+    color: #121a2b;
+    text-decoration: none;
+    padding: .25rem .5rem;
+    border-radius: 8px;
+  }
+  .links a[aria-current="page"] { background: rgba(0,0,0,.06); }
+
+  a[data-testid] {
+    text-decoration: none;
+  }
+  a[data-testid]:hover { text-decoration: underline; }
+
+  :where(a, button, input, label, textarea, select)[data-testid]:focus-visible {
+    outline: 3px solid var(--ring);
+    outline-offset: 3px;
+    border-radius: 6px;}
+
+  .page-wrap[data-testid] {
+    min-height: 100%;
+    display: grid;
+    place-items: center;
+    padding: 2rem 1rem;
+  }
+
+  article[data-testid="test-profile-card"] {
+    width: 100%;
+    max-width: var(--maxw);
+    background: linear-gradient(180deg, rgba(255,255,255,.03), rgba(255,255,255,.01));
+    border: 1px solid rgba(255,255,255,.08);
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+    overflow: hidden;
+  }
+
+  .bar[data-testid]{
+    height: 6px;
+    background: linear-gradient(90deg, #6aa2ff, #8b7bff, #e07cff);
+  }
+
+  .card-grid[data-testid]{
+    display: grid;
+    gap: calc(var(--gap) * 1.25);
+    padding: calc(var(--gap) * 1.25);
+  }
+
+  @media (min-width: 760px) {
+    .card-grid[data-testid]{
+      grid-template-columns: 260px 1fr;
+      align-items: start;
+    }
+  }
+
+  .left[data-testid]{
+    display: grid;
+    gap: var(--gap);
+  }
+
+  figure[data-testid]{
+    margin: 0;
+    background: var(--panel);
+    border: 1px solid rgba(255,255,255,.08);
+    border-radius: var(--radius);
+    overflow: hidden;
+  }
+  .avatar-box[data-testid]{
+    aspect-ratio: 1 / 1;
+    display: grid;
+    place-items: center;
+    background:
+      radial-gradient(120px 80px at 30% 20%, rgba(106,162,255,.15), transparent 60%),
+      radial-gradient(140px 100px at 70% 80%, rgba(224,124,255,.14), transparent 70%),
+      #0d1526;
+  }
+  img[data-testid="test-user-avatar"]{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+  }
+
+  figcaption[data-testid]{
+    padding: .75rem .85rem;
+    color: var(--muted);
+    font-size: .9rem;
+    border-top: 1px solid rgba(255,255,255,.06);
+  }
+
+  header[data-testid]{
+    display: grid;
+    gap: .25rem;
+    margin: 15px;
+  }
+  h2[data-testid]{
+    margin: 0;
+    font-size: clamp(1.25rem, 2.5vw, 1.75rem);
+    letter-spacing: .2px;
+    color: #121a2b;
+  }
+  p[data-testid]{
+    margin: .25rem 0 0 0;
+    color: #121a2b;
+  }
+
+  .meta[data-testid]{
+    display: flex;
+    gap: .75rem;
+    flex-wrap: wrap;
+    color: #0b1220;
+    font-size: .9rem;
+  }
+  .pill[data-testid]{
+    background: rgba(233, 181, 8, 1);
+    padding: .35rem .6rem;
+    border-radius: 999px;
+    border: 1px solid rgba(255,255,255,.1);
+  }
+
+  nav[data-testid],
+  section[data-testid]{
+    background: var(--panel);
+    border: 1px solid rgba(255,255,255,.08);
+    border-radius: var(--radius);
+    padding: .9rem;
+  }
+
+  ul[data-testid]{
+    margin: .25rem 0 0 0;
+    padding-left: 1.2rem;
+    display: grid;
+    gap: .35rem;
+    word-break: break-word;
+  }
+
+  .blocks[data-testid]{
+    display: grid;
+    gap: var(--gap);
+  }
